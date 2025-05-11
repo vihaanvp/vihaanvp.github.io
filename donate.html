@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
+    <!-- Code to make it viewable on phones -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tab Resources -->
     <title>Donate to Vihaan</title>
     <link rel="stylesheet" href="stylesheets/donate.css" />
-    <script>
-        function toggleQR() {
-            const qr = document.getElementById('upi-qr');
-            qr.style.display = qr.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Javascript -->
+    <script src="scripts/donate.js"></script>
 </head>
 
 <body>
+    <!-- Header Code -->
     <header>
         <a href="./" id="backBTN">
             ← Back
@@ -23,6 +25,7 @@
         <p>Your donation helps me build more cool projects and content!</p>
     </header>
 
+    <!-- Section 1: Why Donate? -->
     <section>
         <h2>Why Donate?</h2>
         <p>
@@ -31,6 +34,8 @@
             and dedicate more time to creative work (and school). If you like what I do, consider supporting me!
         </p>
     </section>
+
+    <!-- Section 2: UPI Payment -->
     <section>
         <h2>UPI (India)</h2>
         <p>You can donate using this UPI ID:</p>
@@ -39,6 +44,8 @@
         <img id="upi-qr" src="images/upi-qr.png" alt="UPI QR Code"
             style="max-width: 200px; width: 100%; border-radius: 8px; display: none;" />
     </section>
+
+    <!-- Section 3: Crypto Wallets payment options -->
     <section>
         <h2>Crypto Wallets</h2>
         <h3>Small Donations</h3>
@@ -50,6 +57,7 @@
         <p class="wallet-code"><strong>Bitcoin (BTC):</strong> bc1qeja3ny49xh6aq8zq42j00tp0pxngtapc2jcerj</p>
     </section>
 
+    <!-- Footer -->
     <footer>
         &copy; 2025 Vihaan Parlikar. Thanks for your support!
     </footer>
