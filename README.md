@@ -5,10 +5,6 @@ Welcome to my personal portfolio site! I'm Vihaan — a passionate gamer, coder,
 ## 🌐 Website
 [Visit My Website](https://vihaanvp.github.io/)
 
-## 🚀 Features
-- 💼 Portfolio of coding, robotics, and gaming projects
-- 💸 Donation support (via UPI/PayPal/etc.)
-
 ## 🛠️ Built With
 - HTML, CSS, JavaScript
 - UPI QR and Crypto Wallets for donations
