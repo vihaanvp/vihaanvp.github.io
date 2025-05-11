@@ -1,13 +1,13 @@
 body {
-  background-color: #0a0a23;
-  color: #f0f0f5;
+  background-color: #0d1b2a;
+  color: #f4a261;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #111;
+  background-color: #1b263b;
   padding: 1rem 2rem;
   text-align: center;
 }
@@ -32,7 +32,7 @@ h1 {
 }
 
 .certificate {
-  background-color: #1a1a2e;
+  background-color: #1e2d3b;
   border-left: 4px solid #f9a826;
   border-radius: 10px;
   padding: 1.5rem;
@@ -41,7 +41,7 @@ h1 {
 }
 
 .certificate h2 {
-  color: #ffffff;
+  color: #e76f51;
   margin-top: 0;
 }
 
