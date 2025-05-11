@@ -37,7 +37,7 @@ h1 {
   border-radius: 10px;
   padding: 1.5rem;
   margin: 1.5rem 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .certificate h2 {
@@ -75,10 +75,10 @@ footer {
 }
 
 #backBTN {
-    position: absolute; 
-    left: 1rem; 
-    top: 1rem; 
-    color: #f4a261; 
-    text-decoration: none; 
-    font-weight: bold;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #f4a261;
+  text-decoration: none;
+  font-weight: bold;
 }
