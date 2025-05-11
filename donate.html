@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate to Vihaan</title>
+    <link rel="stylesheet" href="stylesheets/donate.css" />
+    <script>
+        function toggleQR() {
+            const qr = document.getElementById('upi-qr');
+            qr.style.display = qr.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" id="backBTN">
+            ← Back
+        </a>
+        <h1>Support My Work</h1>
+        <p>Your donation helps me build more cool projects and content!</p>
+    </header>
+
+    <section>
+        <h2>Why Donate?</h2>
+        <p>
+            I’m a student who loves everything about gaming, coding, and robotics. Donations help me get better tools, upgrade
+            components, make better videos,
+            and dedicate more time to creative work (and school). If you like what I do, consider supporting me!
+        </p>
+    </section>
+    <section>
+        <h2>UPI (India)</h2>
+        <p>You can donate using this UPI ID:</p>
+        <p><strong>vihaanvp@axl</strong> (This is my Mother's second account)</p>
+        <button class="donate-button" onclick="toggleQR()">Show/Hide QR Code</button>
+        <img id="upi-qr" src="images/upi-qr.png" alt="UPI QR Code"
+            style="max-width: 200px; width: 100%; border-radius: 8px; display: none;" />
+    </section>
+    <section>
+        <h2>Crypto Wallets</h2>
+        <h3>Small Donations</h3>
+        <p><strong>TRON (TRX):</strong> TVf6Y8xrUKs7aN5Wh3VBWp14pRLwfpcd9L</p>
+        <p><strong>Litecoin (LTC):</strong> ltc1qgmr8xg44r4z9clks9ynula245jfd54e4c87ycg</p>
+        <br><hr><br>
+        <h3>Huge Sum of Money Donations - Above $100 <br>(If you do this, then you're OP)</h3>
+        <p><strong>Ethereum (ETH):</strong> 0xb86f41916d0068993367561e0c9efbd6d74d3458</p>
+        <p><strong>Bitcoin (BTC):</strong> bc1qeja3ny49xh6aq8zq42j00tp0pxngtapc2jcerj</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Vihaan Parlikar. Thanks for your support!
+    </footer>
+</body>
+
+</html>
