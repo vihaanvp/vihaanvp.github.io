@@ -77,3 +77,11 @@ footer {
     text-decoration: none; 
     font-weight: bold;
 }
+
+.wallet-code {
+    font-size: small;
+}
+
+strong {
+    font-size: medium;
+}
