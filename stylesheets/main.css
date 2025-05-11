@@ -78,3 +78,19 @@ footer {
         padding: 1rem;
     }
 }
+
+.socials-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gifs {
+    width: 100px;
+    height: auto;
+}
+
+.social-links {
+    text-align: center;
+}
