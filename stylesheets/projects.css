@@ -1,0 +1,84 @@
+body {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1b263b;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav a {
+  color: #f9a826;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #f4a261;
+  margin-bottom: 1rem;
+}
+
+.project-item {
+  background-color: #1e2d3b;
+  border-left: 4px solid #005eff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.project-item h2 {
+  color: #e76f51;
+  margin-top: 0;
+}
+
+.project-item p {
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+.project-item a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: #5d38c3;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.project-item a:hover {
+  background-color: #1e0fec;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: #777;
+  margin-top: 3rem;
+}
+
+#backBTN {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #f4a261;
+  text-decoration: none;
+  font-weight: bold;
+}
