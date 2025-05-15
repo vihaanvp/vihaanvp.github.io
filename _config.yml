@@ -1,0 +1,60 @@
+# Site Information
+title: VihaanVP's Portfolio
+description: A showcase of current and past projects, social links, certificates, and more.
+url: https://vihaanvp.me
+baseurl: ""
+
+# Author Information
+author:
+  name: VihaanVP
+  email: vihaanvpyt@outlook.com
+  social:
+    github: https://github.com/vihaanvp
+    youtube: https://www.youtube.com/@vihaanvp
+    twitch: https://www.twitch.tv/vihaanvp
+    steam: https://steamcommunity.com/id/vihaanvp
+    namemc: https://namemc.com/profile/VihaanVP.2
+
+# Plugins
+plugins:
+  - jekyll-feed # RSS feed for blogs
+  - jekyll-seo-tag # Enhances SEO
+  - jekyll-sitemap # Generates a sitemap for search engines
+  - jekyll-assets # Helps with asset management
+
+# Markdown Configuration
+markdown: kramdown
+highlighter: rouge # Syntax highlighting for code
+
+# Permalinks
+permalink: pretty # Removes file extensions from URLs
+
+# SEO and Social Media
+jekyll_seo_tag:
+  title: VihaanVP's Portfolio
+  description: VihaanVP's portfolio website showcasing projects, social links, and certificates.
+  social:
+    email: vihaanvpyt@outlook.com
+    youtube: https://www.youtube.com/@vihaanvp
+    twitch: https://www.twitch.tv/vihaanvp
+    github: vihaanvp
+
+# Exclude unnecessary files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# Sitemap Configuration
+sitemap:
+  exclude:
+    - /drafts/
+  include:
+    - /projects/
+    - /certificates/
+    - /animations/
+    - /code/
+    - /images/
+    - /project reports/
+    - /scripts/
+    - /stylesheets/
