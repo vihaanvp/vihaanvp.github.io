@@ -23,7 +23,7 @@ h1 {
 nav {
     text-align: center;
     margin: 1rem 0;
-}
+}   
 
 nav a {
     color: #f4a261;
@@ -86,64 +86,11 @@ footer {
     gap: 20px;
 }
 
+.gifs {
+    width: 100px;
+    height: auto;
+}
+
 .social-links {
     text-align: center;
-}
-
-.socials-flex-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    margin-top: 18px;
-    flex-wrap: nowrap;
-}
-
-.social-button-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    background: #ffe066;
-    color: #232335;
-    padding: 6px 18px 6px 14px;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s, transform 0.1s;
-    box-shadow: 0 2px 8px 0 rgba(40, 39, 60, 0.07);
-    letter-spacing: 0.02em;
-}
-
-.social-btn i {
-    margin-right: 8px;
-    font-size: 1.08em;
-    min-width: 1.25em;
-    text-align: center;
-}
-
-.social-btn:hover {
-    background: #ffd43b;
-    color: #141422;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 4px 16px 0 rgba(40, 39, 60, 0.13);
-}
-
-@media (max-width: 800px) {
-    .socials-flex-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .social-gif {
-        margin: 0;
-        align-self: center;
-    }
 }
