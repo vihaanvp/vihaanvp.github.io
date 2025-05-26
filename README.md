@@ -6,5 +6,4 @@ Welcome to my personal portfolio site! I'm Vihaan — a passionate gamer, coder,
 [Visit My Website](https://vihaanvp.github.io/)
 
 ## 🛠️ Built With
-- HTML, CSS, JavaScript
-- UPI QR and Crypto Wallets for donations
+- HTML, CSS, JavaScript, all coded by yours truly.
