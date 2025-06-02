@@ -94,3 +94,14 @@ footer {
 .social-links {
     text-align: center;
 }
+
+#email-copied-msg {
+    display:none;
+    color:#ffe066;
+    margin-left:8px;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
