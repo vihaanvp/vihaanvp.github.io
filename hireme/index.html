@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta for responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tab Resources -->
+    <title>Hire Me | VihaanVP's Hideout</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <!-- THEME CSS (matching your projects page) -->
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+    <meta name="darkreader-lock">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <h1><span style="color: pink;">ᓚᘏᗢ</span> <mark>/hireme</mark></h1><br>
+        <p>
+            / 
+            <a href="../">home</a> 
+            / 
+            <a href="../projects/">projects</a> 
+            / 
+            <a href="../certificates/">certificates</a> 
+            / 
+            <a href="./">hire me</a> 
+            / 
+            <a href="../feedback/">feedback</a> 
+            /
+        </p>
+    </header>
+
+    <!-- What I can do for you -->
+    <h3 style="margin-bottom: 20px;"><span style="color:#74c7ec;">//</span> what I can do for you:</h3>
+    <ul>
+        <li>
+            <strong>Webpage Development</strong> — 
+            Clean, modern, and responsive websites built to your needs.
+        </li>
+        <li>
+            <strong>Minecraft Mods & Plugins</strong> — 
+            Custom mods or plugins for your server or gameplay experience.
+        </li>
+        <li>
+            <strong>Video Editing</strong> — 
+            YouTube, gaming, or promo video edits with attention to detail.
+        </li>
+    </ul>
+
+    <!-- Why Hire me? -->
+    <section>
+        <h3 style="margin-bottom: 0.6em;"><span style="color:#74c7ec;">//</span> why hire me?</h3>
+        <p>
+            I’m a student who loves everything about gaming, coding, and robotics.<br>
+            You are looking for someone to do your work, and I am looking for work, so we are a great match!<br>
+            For contacting me, <a href="../#socials">click here!</a><br>
+            For payments, see the options below.
+        </p>
+    </section>
+
+    <!-- Payment Options -->
+    <section>
+        <h3 style="margin-bottom: 0.6em;"><span style="color:#74c7ec;">//</span> payment options</h3>
+        <ul>
+            <!-- UPI -->
+            <li>
+                <strong>UPI (India):</strong> <span style="font-family: monospace;">vihaanvp@axl</span>
+                <button class="donate-button" onclick="toggleQR()" style="margin-left: 10px; color: black;">Show/Hide QR Code</button>
+                <br>
+                <img id="upi-qr" src="../images/upi-qr.png" alt="UPI QR Code"
+                    style="max-width: 200px; width: 100%; border-radius: 8px; display: none; margin-top: 0.5em;" />
+            </li>
+
+            <!-- Crypto -->
+            <li style="margin-top: 1em;">
+                <strong>Crypto Wallets</strong>
+                <ul>
+                    <li><strong>TRON (TRX):</strong> TVf6Y8xrUKs7aN5Wh3VBWp14pRLwfpcd9L <span style="color: #7f8c8d;">(below $100)</span></li>
+                    <li><strong>Litecoin (LTC):</strong> ltc1qgmr8xg44r4z9clks9ynula245jfd54e4c87ycg <span style="color: #7f8c8d;">(below $100)</span></li>
+                    <li style="margin-top: .5em;"><strong>Ethereum (ETH):</strong> 0xb86f41916d0068993367561e0c9efbd6d74d3458 <span style="color: #7f8c8d;">(above $100 only)</span></li>
+                    <li><strong>Bitcoin (BTC):</strong> bc1qeja3ny49xh6aq8zq42j00tp0pxngtapc2jcerj <span style="color: #7f8c8d;">(above $100 only)</span></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Javascript -->
+    <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
+    <script>
+        function toggleQR() {
+            var qr = document.getElementById('upi-qr');
+            qr.style.display = qr.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+<!-- Footer -->
+    <footer style="margin-top: 2.5em; text-align: center; color: var(--nc-tx-2);">
+        &copy; 2025 Vihaan Parlikar. All rights reserved.
+    </footer>
+</body>
+</html>
