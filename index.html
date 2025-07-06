@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Code to make it viewable on phones -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Code to make it visible on other devices -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tab Resouces -->
+    <!-- Tab Resources -->
     <title>Home | VihaanVP's Hideout</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheets/downloaded/inter.css">
+    <link rel="stylesheet" href="stylesheets/downloaded/new.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css" />
+    <meta name="darkreader-lock">
 
     <!-- Discord Embed Properties -->
     <meta property="og:title" content="VihaanVP's Hideout" />
@@ -20,115 +24,102 @@
 </head>
 
 <body>
-    <!-- Header Code -->
     <header>
-        <img src="images/logo.png" alt="logo" id="logo">
-        <div>
-            <h1>VihaanVP (Vihaan Parlikar)</h1>
-            <p>
-                Gamer | Coder | High School Student <br>
-                <a href="https://github.com/vihaanvp/vihaanvp.github.io" target="_blank">
-                    View the website's source code!
-                </a>
-            </p>
-        </div>
+        <!-- Title -->
+        <h1><span style="color: pink;">ᓚᘏᗢ</span> <mark>vihaanvp.me</mark></h1><br>
+
+        <!-- Navigation Bar -->
+        <p>
+            / 
+            <a href="/">home</a> 
+            / 
+            <a href="projects/">projects</a> 
+            / 
+            <a href="certificates/">certificates</a> 
+            / 
+            <a href="hireme/">hire me</a> 
+            / 
+            <a href="feedback/">feedback</a> 
+            /
+        </p>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <!-- Internal HREF -->
-        <a href="#about">[ About Me ]</a>
-        <a href="#socials">[ My Socials ]</a>
+    <!-- About Me -->
+    <p>
+        Hi! I'm Vihaan, a 10th-grade student who loves gaming, building cool robotics stuff, and coding smart solutions.
+        <br><br>
+        I also like to integrate my coding knowledge to help me in gaming, such as building plugins for Minecraft using Java,
+        using Python to make scripts, and more!
+    </p><br>
 
-        <!-- External HREF -->
-        <a href="./projects">[ Projects ]</a>
-        <a href="./certificates">[ Certificates ]</a>
+    <!-- Some Facts about me -->
+    <h3 style="margin-bottom: 20px;"><span style="color:#74c7ec;">//</span> some facts about me:</h3>
+    <ul>
+        <li>I am a living human.</li>
+        <li>I love everything about the tech world.</li>
+        <li><a href=https://minecraft.net/ target="_blank">Minecraft</a> is my favorite game.</li>
+    </ul><br>
 
-        <!-- Add all new HREF tags above ( ensuring that feedback and donate remain at the bottom ) -->
-        <a href="./hireme">[ Hire Me ]</a>
-        <a href="./feedback">[ Feedback ]</a>
-    </nav>
+    <!-- Socials -->
+    <h3 style="margin-bottom: 20px;"><span style="color:#74c7ec;">//</span> places to find me:</h3>
+    <img class="pkmn" src="animations/steve.gif">
 
-    <!-- Section 1: About Me -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! I'm Vihaan, a 10th-grade student who loves gaming, building cool robotics stuff, and coding smart
-            solutions. <br>
-            I also like to integrate my coding knowledge to help me in gaming, such as building plugins for Minecraft
-            using Java,
-            using Python to make scripts, and more!
-        </p>
-    </section>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 1em;">
+        <!-- GitHub -->
+        <a href="https://github.com/vihaanvp" target="_blank" style="text-decoration: none;">
+            <mark><i class="fab fa-github"></i> GitHub</mark>
+        </a>
 
-    <!-- Section 2: Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <!-- MediBot -->
-            <li>(<i>Active</i>) <a href="./projects#medibot"><strong>MediBot</strong></a> – A Medicine Dispensing robot for elderly people and people
-                with chronic diseases to avoid the risk of missed doses (optimized for price).
-                Currently being made for the
-                <a href="https://www.ibo.org/programmes/middle-years-programme/assessment-and-exams/personal-project/"
-                    target="_blank">
-                    IB Personal Project
-                </a>.
-            </li>
+        <!-- Discord -->
+        <a href="javascript:void(0);" onclick="copyDiscordTag(); return false;" style="text-decoration: none;">
+            <mark><i class="fab fa-discord"></i> Discord</mark>
+        </a>
 
-            <!-- Home Farmer -->
-            <li>(<i>Active</i>) <a href="./projects#home-farmer"><strong>Home Farmer</strong></a> - An Urban Farming robot made with Arduino and a crap ton of sensors to
-                make sure everyone has
-                fresh, healthy food right where they need it, their home (optimized for price).
-                Made for the
-                <a href="https://wroindia.org/season-2024/" target="_blank">
-                    World Robot Olympiad
-                </a>.
-            </li>            
+        <!-- Instagram -->
+        <a href="https://instagram.com/vihaanvp" target="_blank" style="text-decoration: none;">
+            <mark><i class="fab fa-instagram"></i> Instagram</mark>
+        </a>
 
-            <!-- Line Follower -->
-            <li><a href="./projects#line-follower"><strong>Line Follower Robot</strong></a> – Built with Arduino and IR sensors for the
-                <a target="_blank" href="https://techradiance.in/line-follower-robot-competition/">
-                    National Techradiance LFR Championship
-                </a>.
-            </li>
-        </ul>
-    </section>
+        <!-- E-mail -->
+        <a href="javascript:void(0);" onclick="copyEmail();"2 style="text-decoration: none;">
+            <mark><i class="fa fa-envelope"></i> E-mail</mark>
+        </a>
 
-    <!-- Section 3: Socials -->
-    <section id="socials">
-        <h2>My Socials</h2>
-        <div class="socials-container">
-            <!-- Left GIF-->
-            <img src="animations/creeper.gif" alt="Creeper" class="gifs">
+        <!-- Twitter (X) -->
+        <a href="https://x.com/vihaanvp_yt" target="_blank" style="text-decoration: none;">
+            <mark><i class="fa-brands fa-x-twitter"></i> X</mark>
+        </a>
 
-            <!-- Links -->
-            <div class="social-links">
-                <p>Email:
-                    <a id="copy-email-btn" href="javascript:void(0);">
-                        vihaanvpyt@outlook.com
-                    </a>
-                    <span id="email-copied-msg">Copied!</span>
-                </p>
-                <p>GitHub: <a href="https://github.com/vihaanvp" target="_blank">github.com/vihaanvp</a></p>
-                <p>YouTube: <a href="https://youtube.com/@vihaanvp" target="_blank">youtube.com/@vihaanvp</a></p>
-                <p>TikTok: <a href="https://tiktok.com/@vihaanvp_yt">tiktok.com/@vihaanvp_yt</a></p>
-                <p>Twitch: <a href="https://twitch.tv/vihaanvp" target="_blank">twitch.tv/vihaanvp</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/vihaanvp/" target="_blank">instagram.com/vihaanvp</a></p>
-                <p>Steam: <a href="https://steamcommunity.com/id/vihaanvp" target="_blank">steam.com/id/vihaanvp</a></p>
-                <p>NameMC: <a href="https://namemc.com/profile/VihaanVP.2" target="_blank">namemc.com/vihaanvp</a></p>
-            </div>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@vihaanvp" target="_blank" style="text-decoration: none;">
+            <mark><i class="fa-brands fa-youtube"></i> YouTube</mark>
+        </a>
 
-            <!-- Right GIF -->
-            <img src="animations/steve.gif" alt="Steve" class="gifs">
-        </div>
-    </section>
+        <!-- Steam -->
+        <a href="https://steamcommunity.com/id/vihaanvp/" target="_blank" style="text-decoration: none;">
+            <mark><i class="fab fa-steam"></i> Steam</mark>
+        </a>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Vihaan Parlikar. All rights reserved.
-    </footer>
+        <!-- NameMC -->
+        <a href="https://namemc.com/profile/VihaanVP.2" target="_blank" style="text-decoration: none;">
+            <mark><i class="fa-solid fa-gem"></i> NameMC</mark>
+        </a>
+    </div>
+
+    <!-- Javascript -->
+    <script src="scripts/downloaded/fonts.js"></script>
+    <script>
+        // Copy Discord tag to clipboard
+        function copyDiscordTag() {
+            navigator.clipboard.writeText("vihaanvp");
+            alert("Copied username to clipboard: vihaanvp");
+        }
+
+        // Copy email to clipboard
+        function copyEmail() {
+            navigator.clipboard.writeText("vihaanvpyt@outlook.com");
+            alert("Copied email to clipboard: vihaanvpyt@outlook.com");
+        }
+    </script>
 </body>
-
-<!-- Javascript -->
-<script src="scripts/main.js"></script>
 </html>
