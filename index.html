@@ -1,130 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Code to make it visible on other devices -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VihaanVP's Hideout</title>
+    <meta name="description" content="Vihaan's Portfolio website for anyone who wants information about him." />
+    <meta name="author" content="Vihaan Parlikar" />
+    
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
 
-    <!-- Tab Resources -->
-    <title>Home | VihaanVP's Hideout</title>
-    <link rel="icon" href="media/logo.png" type="image/png">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-    <link rel="stylesheet" href="stylesheets/main.css" />
-    <meta name="darkreader-lock">
-
-    <!-- Discord Embed Properties -->
     <meta property="og:title" content="VihaanVP's Hideout" />
     <meta property="og:description" content="Vihaan's Portfolio website for anyone who wants information about him." />
-    <meta property="og:url" content="https://vihaanvp.github.io/" />
-    <meta property="og:image" content="https://vihaanvp.github.io/media/logo.png" />
     <meta property="og:type" content="website" />
-</head>
+    <meta property="og:url" content="https://vihaanvp.me/" />
 
-<body>
-    <header>
-        <!-- Title -->
-        <h1><span style="color: pink;">ᓚᘏᗢ</span> <mark>vihaanvp.me</mark></h1><br>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VihaanVP's Hideout" />
+  </head>
 
-        <!-- Navigation Bar -->
-        <p>
-            / 
-            <a href="/">home</a> 
-            / 
-            <a href="./projects">projects</a> 
-            / 
-            <a href="./certificates">certificates</a> 
-            / 
-            <a href="./feedback">feedback</a> 
-            /
-        </p>
-    </header>
-
-    <!-- About Me -->
-    <p>
-        Hi! I'm Vihaan, a 10th-grade student who loves gaming, building cool robotics stuff, and coding smart solutions.
-        <br><br>
-        I also like to integrate my coding knowledge to help me in gaming, such as building plugins for Minecraft using Java,
-        using Python to make scripts, and more!
-    </p><br>
-
-    <!-- Some Facts about me -->
-    <h3 style="margin-bottom: 20px;"><span style="color:#74c7ec;">//</span> some facts about me:</h3>
-    <ul>
-        <li>I am a living human.</li>
-        <li>I love everything about the tech world.</li>
-        <li><a href=https://minecraft.net/ target="_blank">Minecraft</a> is my favorite game.</li>
-    </ul><br>
-
-    <!-- Socials -->
-    <h3 style="margin-bottom: 20px;"><span style="color:#74c7ec;">//</span> places to find me:</h3>
-
-    <!-- Steve -->
-    <img class="pkmn" src="media/animations/steve.gif" alt="Steve from Minecraft">
-
-    <div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 1em;">
-        <!-- GitHub -->
-        <a href="https://github.com/vihaanvp" target="_blank" style="text-decoration: none;">
-            <mark><i class="fab fa-github"></i> GitHub</mark>
-        </a>
-
-        <!-- Discord -->
-        <a href="javascript:void(0);" onclick="copyDiscordTag(); return false;" style="text-decoration: none;">
-            <mark><i class="fab fa-discord"></i> Discord</mark>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://instagram.com/vihaanvp" target="_blank" style="text-decoration: none;">
-            <mark><i class="fab fa-instagram"></i> Instagram</mark>
-        </a>
-
-        <!-- E-mail -->
-        <a href="javascript:void(0);" onclick="copyEmail();"2 style="text-decoration: none;">
-            <mark><i class="fa fa-envelope"></i> E-mail</mark>
-        </a>
-
-        <!-- Twitter (X) -->
-        <a href="https://x.com/vihaanvp_yt" target="_blank" style="text-decoration: none;">
-            <mark><i class="fa-brands fa-x-twitter"></i> X</mark>
-        </a>
-
-        <!-- YouTube -->
-        <a href="https://youtube.com/@vihaanvp" target="_blank" style="text-decoration: none;">
-            <mark><i class="fa-brands fa-youtube"></i> YouTube</mark>
-        </a>
-
-        <!-- Steam -->
-        <a href="https://steamcommunity.com/id/vihaanvp/" target="_blank" style="text-decoration: none;">
-            <mark><i class="fab fa-steam"></i> Steam</mark>
-        </a>
-
-        <!-- NameMC -->
-        <a href="https://namemc.com/profile/VihaanVP.2" target="_blank" style="text-decoration: none;">
-            <mark><i class="fa-solid fa-gem"></i> NameMC</mark>
-        </a>
-    </div>
-
-    <!-- Footer -->
-    <footer style="margin-top: 2.5em; text-align: center; color: var(--nc-tx-2);">
-        &copy; 2025 Vihaan Parlikar. All rights reserved.
-    </footer>
-
-    <!-- Javascript -->
-    <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
-    <script>
-        // Copy Discord tag to clipboard
-        function copyDiscordTag() {
-            navigator.clipboard.writeText("vihaanvp");
-            alert("Copied username to clipboard: vihaanvp");
-        }
-
-        // Copy email to clipboard
-        function copyEmail() {
-            navigator.clipboard.writeText("vihaan@vihaanvp.me");
-            alert("Copied email to clipboard: vihaan@vihaanvp.me");
-        }
-    </script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

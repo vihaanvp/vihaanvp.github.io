@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VihaanVP's Hideout</title>
+    <script>
+      // GitHub Pages 404 handler for SPA routing
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser to the
+      // new url with only a query string and hash fragment,
+      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for some IE9 support
+      // https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/
+      (function() {
+        var l = window.location;
+        var basePath = '/';
+        
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          basePath + '?/' +
+          l.pathname.slice(1).replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- This file must be at least 512 bytes for IE9 support -->
+    <!-- Padding to ensure minimum size -->
+    <div style="display:none;">This 404 page is used for GitHub Pages SPA routing. If you see this, the redirect script should have run automatically.</div>
+  </body>
+</html>
+
