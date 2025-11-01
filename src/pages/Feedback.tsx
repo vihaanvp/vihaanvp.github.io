@@ -7,7 +7,7 @@ const Feedback = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle className="mb-4">your feedback matters!</SectionTitle>
           
@@ -25,14 +25,15 @@ const Feedback = () => {
               frameBorder="0"
               marginWidth={0}
               marginHeight={0}
-              style={{ border: "none", maxWidth: "100%", maxHeight: "100vh" }}
+              className="w-full"
+              style={{ border: "none", minHeight: "500px", maxHeight: "100vh" }}
               allowFullScreen
             />
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto max-w-4xl px-6">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <Footer />
       </div>
     </div>

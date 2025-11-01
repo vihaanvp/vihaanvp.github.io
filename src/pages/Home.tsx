@@ -33,7 +33,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         ref={(el) => (sectionsRef.current[0] = el)}
-        className="pt-32 pb-8 px-6 opacity-0"
+        className="pt-24 sm:pt-32 pb-8 px-4 sm:px-6 opacity-0"
       >
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
@@ -55,7 +55,7 @@ const Home = () => {
       {/* Facts Section */}
       <section
         ref={(el) => (sectionsRef.current[1] = el)}
-        className="pt-8 pb-12 px-6 opacity-0"
+        className="pt-8 pb-12 px-4 sm:px-6 opacity-0"
       >
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>some facts about me:</SectionTitle>
@@ -91,7 +91,7 @@ const Home = () => {
       {/* Socials Section */}
       <section
         ref={(el) => (sectionsRef.current[2] = el)}
-        className="pt-8 pb-12 px-6 opacity-0"
+        className="pt-8 pb-12 px-4 sm:px-6 opacity-0"
       >
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>places to find me:</SectionTitle>
@@ -99,7 +99,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="container mx-auto max-w-4xl px-6">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <Footer />
       </div>
     </div>

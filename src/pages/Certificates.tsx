@@ -76,13 +76,12 @@ const Certificates = () => {
       {certs.map((cert, index) => (
         <li
           key={index}
-          className="group p-5 bg-card border border-primary/20 rounded-lg hover:border-primary hover:shadow-[0_0_30px_hsl(var(--glow-primary)/0.2)] transition-all duration-500"
+          className="group p-4 sm:p-5 bg-card border border-primary/20 rounded-lg hover:border-primary hover:shadow-[0_0_30px_hsl(var(--glow-primary)/0.2)] transition-all duration-500"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
-          <strong className="text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+          <strong className="text-base sm:text-lg text-foreground group-hover:text-primary transition-colors duration-300 block mb-1">
             {cert.title}
           </strong>
-          <br />
           <span className="text-muted-foreground text-sm">
             {cert.org}.{" "}
             <a
@@ -103,7 +102,7 @@ const Certificates = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-32 pb-20 px-6">
+      <div className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
           <section
             ref={(el) => (sectionsRef.current[0] = el)}
@@ -123,7 +122,7 @@ const Certificates = () => {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-4xl px-6">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <Footer />
       </div>
     </div>

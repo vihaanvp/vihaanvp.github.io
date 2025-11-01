@@ -69,7 +69,7 @@ const SocialLinks = () => {
           onClick={social.onClick}
           target={social.external ? "_blank" : undefined}
           rel={social.external ? "noopener noreferrer" : undefined}
-          className="group relative px-4 py-2 bg-card border border-primary/30 rounded-lg hover:border-primary hover:bg-primary/10 transition-all duration-300 cursor-pointer overflow-hidden"
+          className="group relative px-4 py-3 sm:py-2 bg-card border border-primary/30 rounded-lg hover:border-primary hover:bg-primary/10 transition-all duration-300 cursor-pointer overflow-hidden min-h-[44px] flex items-center"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>

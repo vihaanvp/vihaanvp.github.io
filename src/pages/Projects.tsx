@@ -108,7 +108,7 @@ const Projects = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>my works & projects:</SectionTitle>
           
@@ -117,26 +117,28 @@ const Projects = () => {
               <li
                 key={index}
                 ref={(el) => (itemsRef.current[index] = el)}
-                className="group p-6 bg-card border border-primary/20 rounded-lg hover:border-primary hover:shadow-[0_0_30px_hsl(var(--glow-primary)/0.2)] transition-all duration-500 opacity-0"
+                className="group p-4 sm:p-6 bg-card border border-primary/20 rounded-lg hover:border-primary hover:shadow-[0_0_30px_hsl(var(--glow-primary)/0.2)] transition-all duration-500 opacity-0"
               >
-                <div className="mb-2">
-                  <strong className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
+                <div className="mb-2 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                  <strong className="text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </strong>
-                  <span className="text-muted-foreground mx-2">—</span>
-                  {project.links.map((link, i) => (
-                    <span key={i}>
-                      {i > 0 && <span className="text-muted-foreground mx-2">|</span>}
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline glow-text"
-                      >
-                        {link.label}
-                      </a>
-                    </span>
-                  ))}
+                  <span className="hidden sm:inline text-muted-foreground mx-2">—</span>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    {project.links.map((link, i) => (
+                      <span key={i} className="flex items-center">
+                        {i > 0 && <span className="text-muted-foreground mx-2">|</span>}
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline glow-text text-sm sm:text-base"
+                        >
+                          {link.label}
+                        </a>
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
@@ -147,7 +149,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <div className="container mx-auto max-w-4xl px-6">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <Footer />
       </div>
     </div>
