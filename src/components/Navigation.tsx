@@ -22,9 +22,6 @@ const Navigation = () => {
 
   const navLinks = [
     { path: "/", label: "home" },
-    { path: "/projects", label: "projects" },
-    { path: "/certificates", label: "certificates" },
-    { path: "/feedback", label: "feedback" },
   ];
 
   const NavLink = ({ link }: { link: typeof navLinks[0] }) => (
