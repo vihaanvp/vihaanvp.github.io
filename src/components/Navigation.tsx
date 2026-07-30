@@ -22,6 +22,7 @@ const Navigation = () => {
 
   const navLinks = [
     { path: "/", label: "home" },
+    { path: "/projects", label: "projects" },
   ];
 
   const NavLink = ({ link }: { link: typeof navLinks[0] }) => (
