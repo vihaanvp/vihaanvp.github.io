@@ -37,8 +37,8 @@ const Home = () => {
       >
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-float pointer-events-none"></div>
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
             
             <SectionTitle className="relative z-10 mb-6">who I am</SectionTitle>
             

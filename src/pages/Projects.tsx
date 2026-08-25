@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import SectionTitle from "@/components/SectionTitle";
 import Footer from "@/components/Footer";
@@ -76,8 +77,8 @@ const Projects = () => {
       <section ref={(el) => (sectionsRef.current[0] = el)} className="pt-24 sm:pt-32 pb-8 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-float" />
-            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-float pointer-events-none" />
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-float pointer-events-none" style={{ animationDelay: "2s" }} />
             <SectionTitle className="relative z-10 mb-6">my projects</SectionTitle>
             <p className="text-lg md:text-xl leading-relaxed text-foreground/90 relative z-10">
               Here's where I turn ideas into things that actually move (and grow).
@@ -611,7 +612,10 @@ const Projects = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             <div className="relative">
               <p className="text-foreground/80 mb-6 leading-relaxed text-sm">
-                PaperMC plugins and datapacks that add custom items, recipes, and mechanics to Minecraft servers.
+                PaperMC plugins and datapacks that add custom items, recipes, and mechanics to Minecraft servers.{" "}
+                <Link to="/papermc-plugins" className="text-primary hover:underline glow-text">
+                  Browse full plugin pages with guides & recipes →
+                </Link>
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <SubCard

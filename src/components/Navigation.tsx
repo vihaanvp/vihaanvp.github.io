@@ -23,6 +23,7 @@ const Navigation = () => {
   const navLinks = [
     { path: "/", label: "home" },
     { path: "/projects", label: "projects" },
+    { path: "/papermc-plugins", label: "papermc-plugins" },
   ];
 
   const NavLink = ({ link }: { link: typeof navLinks[0] }) => (
