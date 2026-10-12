@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Scene3D from "./components/Scene3D";
 import PaperMcPlugins from "./pages/PaperMcPlugins";
 import PaperMcPluginDetail from "./pages/PaperMcPluginDetail";
 
@@ -26,6 +27,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <Scene3D />
+        <div className="relative z-10">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -34,6 +37,7 @@ const App = () => (
           <Route path="/papermc-plugins/:slug" element={<PaperMcPluginDetail />} />
           <Route path="*" element={<Home />} />
         </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

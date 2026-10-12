@@ -164,3 +164,24 @@ All colors MUST be HSL.
     }
   }
 }
+
+/* 3D layer: fixed canvas behind content + perspective hover lift on cards.
+   Palette untouched (sky #74c7ec on midnight). transform/opacity only. */
+.scene3d {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .group.relative.bg-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene3d {
+    display: none;
+  }
+}
