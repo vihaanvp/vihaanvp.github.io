@@ -43,7 +43,7 @@ const Home = () => {
             <SectionTitle className="relative z-10 mb-6">who I am</SectionTitle>
             
             <p className="text-lg md:text-xl leading-relaxed text-foreground/90 relative z-10">
-              Hi! I'm Vihaan, a 10th-grade student who loves gaming, building cool robotics stuff, and coding smart solutions.
+              Hi! I'm Vihaan, an 11th-grade IB DP 1 student who loves gaming, building cool robotics stuff, and coding smart solutions.
               <br /><br />
               I also like to integrate my coding knowledge to help me in gaming, such as building plugins for Minecraft using Java,
               using Python to make scripts, and more!

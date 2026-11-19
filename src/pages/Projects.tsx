@@ -16,10 +16,50 @@ const ExternalLinkIcon = ({ className = "w-4 h-4" }: { className?: string }) => 
   </svg>
 );
 
-const Tag = ({ label, variant = "default" }: { label: string; variant?: "default" | "wip" }) => (
-  <span className={`px-2 py-1 rounded text-xs ${variant === "wip" ? "bg-yellow-500/20 text-yellow-400" : "bg-primary/20 text-primary"}`}>
+const Tag = ({ label, variant = "default" }: { label: string; variant?: "default" | "wip" | "featured" }) => (
+  <span className={`px-2 py-1 rounded text-xs ${
+    variant === "wip" ? "bg-yellow-500/20 text-yellow-400" :
+    variant === "featured" ? "bg-primary/20 text-primary font-medium" :
+    "bg-primary/20 text-primary"
+  }`}>
     {label}
   </span>
+);
+
+const FeaturedCard = ({ name, desc, tags, ghUrl, extUrl, extLabel, featured }: {
+  name: string; desc: string; tags: string[]; ghUrl: string; extUrl?: string; extLabel?: string; featured?: boolean;
+}) => (
+  <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
+    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+    <div className="relative">
+      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary flex items-center gap-3">
+            {name}
+            {featured && <Tag label="Featured" variant="featured" />}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {tags.map(t => <Tag key={t} label={t} />)}
+          </div>
+        </div>
+        {extUrl && (
+          <a href={extUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-300 font-medium text-sm whitespace-nowrap">
+            {extLabel || "View Project"} <ExternalLinkIcon />
+          </a>
+        )}
+      </div>
+      <p className="text-foreground/90 mb-6 leading-relaxed">{desc}</p>
+      <div className="pt-6 border-t border-primary/20">
+        <a href={ghUrl} target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors duration-300 text-sm group/link">
+          <GitHubIcon />
+          <span className="group-hover/link:underline">{ghUrl}</span>
+          <ExternalLinkIcon />
+        </a>
+      </div>
+    </div>
+  </div>
 );
 
 const SubCard = ({ name, desc, tags, ghUrl, extUrl, extLabel }: {
@@ -90,8 +130,36 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* ─── HOME FARMER ─── */}
+      {/* ─── FEATURED PROJECTS ─── */}
       <section ref={(el) => (sectionsRef.current[1] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+        <div className="container mx-auto max-w-4xl">
+          <SectionTitle>featured projects:</SectionTitle>
+          <p className="text-foreground/70 mb-8 text-center max-w-2xl mx-auto">
+            These are the projects I'm most proud of — the ones that best represent my skills in robotics, embedded systems, and full-stack development.
+          </p>
+          <div className="space-y-8">
+            <FeaturedCard
+              name="Home Farmer"
+              desc="A semi-automatic plant-care robot designed to monitor and maintain optimal growing conditions for small-scale indoor farming. Built for the World Robot Olympiad, it uses sensors and custom logic to automate irrigation and environmental monitoring — bringing fresh, healthy vegetables right into the home."
+              tags={["Embedded C", "Arduino", "Robotics", "3D Printing", "CNC"]}
+              ghUrl="https://github.com/The-Rooftop-Farmers/home-farmer"
+              extUrl="https://the-rooftop-farmers.github.io/home-farmer/"
+              extLabel="View Project Page"
+              featured={true}
+            />
+            <FeaturedCard
+              name="MediBot"
+              desc="An ESP8266-based automated medication dispenser for elderly and chronic illness patients. Features web-based scheduling (one-time, daily, weekly, hourly), NTP time sync, stepper motor dispensing, buzzer+LED alarm with ACK button, and persistent LittleFS storage. Built with WiFiManager for zero-config WiFi setup."
+              tags={["C++", "ESP8266", "Robotics", "IoT", "Healthcare", "Web Interface"]}
+              ghUrl="https://github.com/vihaanvp/MediBot"
+              featured={true}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── HOME FARMER ─── */}
+      <section ref={(el) => (sectionsRef.current[2] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>home farmer:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -168,248 +236,46 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* ─── CASATLAS ─── */}
-      <section ref={(el) => (sectionsRef.current[2] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
-        <div className="container mx-auto max-w-4xl">
-          <SectionTitle>casatlas:</SectionTitle>
-          <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <div className="relative">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary flex items-center gap-3">
-                    CASAtlas
-                    <Tag label="Work in Progress" variant="wip" />
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    <Tag label="TypeScript" />
-                    <Tag label="Next.js" />
-                    <Tag label="React" />
-                    <Tag label="PostgreSQL" />
-                    <Tag label="Docker" />
-                  </div>
-                </div>
-              </div>
-              <p className="text-foreground/90 mb-6 leading-relaxed">
-                A modern, self-hosted CAS portfolio platform for IB Diploma students. Built with Next.js 16, PostgreSQL, and Prisma, CASAtlas lets students document, manage, and reflect on their CAS experiences with a clean dark-mode interface and teacher approval workflows.
-              </p>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// features</h4>
-                <ul className="space-y-2">
-                  {[
-                    "Experience management with rich text descriptions",
-                    "Evidence upload — images, videos, PDFs, links",
-                    "Rich text reflections with preview",
-                    "Teacher review, approval & revision workflow",
-                    "Threaded commenting system for feedback",
-                    "Admin panel with role-based access (Student / Teacher / Admin)",
-                    "Full audit log of all system actions",
-                    "Full-text search across experiences and users",
-                    "OAuth authentication (Google & GitHub)",
-                    "Dark mode default with light mode option",
-                    "Self-hosted with Docker Compose",
-                  ].map((f, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-primary mt-1">▹</span>
-                      <span className="text-foreground/80">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// tech stack</h4>
-                <p className="text-foreground/80 text-sm leading-relaxed">
-                  <span className="text-foreground">Framework:</span> Next.js 16 (App Router)<br />
-                  <span className="text-foreground">Language:</span> TypeScript 5.8<br />
-                  <span className="text-foreground">UI:</span> React 19 + Tailwind CSS 4<br />
-                  <span className="text-foreground">Database:</span> PostgreSQL 16 + Prisma 6<br />
-                  <span className="text-foreground">Auth:</span> Auth.js v5 (NextAuth)<br />
-                  <span className="text-foreground">Testing:</span> Vitest<br />
-                  <span className="text-foreground">Deployment:</span> Docker + Docker Compose
-                </p>
-              </div>
-              <div className="pt-6 border-t border-primary/20 mt-6">
-                <a href="https://github.com/vihaanvp/casatlas" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors duration-300 text-sm group/link">
-                  <GitHubIcon />
-                  <span className="group-hover/link:underline">github.com/vihaanvp/casatlas</span>
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SNIPPETVAULT ─── */}
+      {/* ─── MEDIBOT ─── */}
       <section ref={(el) => (sectionsRef.current[3] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
-          <SectionTitle>snippetvault:</SectionTitle>
+          <SectionTitle>medibot:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             <div className="relative">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary flex items-center gap-3">
-                    SnippetVault
-                    <Tag label="Work in Progress" variant="wip" />
-                  </h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary">MediBot</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Tag label="Python" />
-                    <Tag label="Flask" />
-                    <Tag label="Docker" />
-                    <Tag label="SQLite" />
-                  </div>
-                </div>
-              </div>
-              <p className="text-foreground/90 mb-6 leading-relaxed">
-                A self-hostable code snippet manager with syntax highlighting, tagging, and configurable authentication. Built with Flask and Docker, SnippetVault runs as a single container with SQLite backing — no external services required.
-              </p>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// features</h4>
-                <ul className="space-y-2">
-                  {[
-                    "Create, edit, delete, and browse snippets with syntax highlighting (Pygments)",
-                    "Tag & search by language and tags, full-text search",
-                    "Configurable auth — email/password, OAuth (Google + GitHub), or both",
-                    "Self-hosted — single container, SQLite-backed (WAL mode)",
-                    "Dockerized with multi-stage build, non-root user, healthcheck",
-                    "Role-based access (admin, moderator, user)",
-                    "OAuth callback support behind reverse proxies",
-                    "Zero-config startup — no .env file required",
-                  ].map((f, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-primary mt-1">▹</span>
-                      <span className="text-foreground/80">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// tech stack</h4>
-                <p className="text-foreground/80 text-sm leading-relaxed">
-                  <span className="text-foreground">Language:</span> Python 3.11+<br />
-                  <span className="text-foreground">Framework:</span> Flask 3.0<br />
-                  <span className="text-foreground">Database:</span> SQLite (WAL mode)<br />
-                  <span className="text-foreground">Auth:</span> Flask-Login + OAuth (Google / GitHub)<br />
-                  <span className="text-foreground">Deployment:</span> Docker + Docker Compose<br />
-                  <span className="text-foreground">Highlighting:</span> Pygments
-                </p>
-              </div>
-              <div className="pt-6 border-t border-primary/20 mt-6">
-                <a href="https://github.com/vihaanvp/SnippetVault" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors duration-300 text-sm group/link">
-                  <GitHubIcon />
-                  <span className="group-hover/link:underline">github.com/vihaanvp/SnippetVault</span>
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TETRIS NEON EDITION ─── */}
-      <section ref={(el) => (sectionsRef.current[4] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
-        <div className="container mx-auto max-w-4xl">
-          <SectionTitle>tetris — neon edition:</SectionTitle>
-          <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <div className="relative">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary">Tetris — Neon Edition</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <Tag label="Python" />
-                    <Tag label="Pygame" />
-                    <Tag label="Game" />
-                  </div>
-                </div>
-              </div>
-              <p className="text-foreground/90 mb-6 leading-relaxed">
-                Classic Tetris with a neon glow-up. Built with Python and Pygame, featuring full SRS rotation, ghost pieces, hold mechanics, DAS/ARR controls, and a complete scoring system with T-spin and combo detection.
-              </p>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// features</h4>
-                <ul className="space-y-2">
-                  {[
-                    "Neon visual theme with glowing tetrominos on dark background",
-                    "Full SRS (Super Rotation System) with wall kicks",
-                    "7-Bag randomizer for fair piece distribution",
-                    "Hold piece & ghost piece preview",
-                    "Hard drop / soft drop with lock delay (500ms, 15 moves)",
-                    "DAS / ARR for smooth keyboard movement",
-                    "Scoring: singles, doubles, triples, Tetrises, T-spins, combos, perfect clears",
-                    "Level progression with increasing gravity every 10 lines",
-                    "Standalone executable (PyInstaller build)",
-                  ].map((f, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-primary mt-1">▹</span>
-                      <span className="text-foreground/80">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mb-6">
-                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// tech stack</h4>
-                <p className="text-foreground/80 text-sm leading-relaxed">
-                  <span className="text-foreground">Language:</span> Python 3.10+<br />
-                  <span className="text-foreground">Library:</span> Pygame 2.5+<br />
-                  <span className="text-foreground">Build:</span> PyInstaller (standalone .exe)<br />
-                  <span className="text-foreground">License:</span> MIT
-                </p>
-              </div>
-              <div className="pt-6 border-t border-primary/20 mt-6">
-                <a href="https://github.com/vihaanvp/tetris-neon-edition" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors duration-300 text-sm group/link">
-                  <GitHubIcon />
-                  <span className="group-hover/link:underline">github.com/vihaanvp/tetris-neon-edition</span>
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── MEGAWWRAPPER ─── */}
-      <section ref={(el) => (sectionsRef.current[5] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
-        <div className="container mx-auto max-w-4xl">
-          <SectionTitle>megawrapper:</SectionTitle>
-          <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <div className="relative">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 group-hover:text-primary">MegaWrapper</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <Tag label="Python" />
-                    <Tag label="Arduino" />
-                    <Tag label="Firmata" />
+                    <Tag label="C++" />
+                    <Tag label="ESP8266" />
                     <Tag label="Robotics" />
+                    <Tag label="IoT" />
+                    <Tag label="Healthcare" />
                   </div>
                 </div>
-                <a href="https://pypi.org/project/megawrapper/" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/vihaanvp/MediBot" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-300 font-medium text-sm whitespace-nowrap">
-                  View on PyPI <ExternalLinkIcon />
+                  View Repository <ExternalLinkIcon />
                 </a>
               </div>
               <p className="text-foreground/90 mb-6 leading-relaxed">
-                A Python library that makes controlling DC motors and servos on an Arduino over Firmata as simple as writing Arduino code. Published on PyPI as <span className="text-primary font-mono">megawrapper</span> with optional VL53L0X time-of-flight sensor support.
+                An automated medication dispenser for elderly and chronic illness patients. Built on ESP8266/NodeMCU with a stepper motor (ULN2003) for precise pill dispensing. Features a full web-based scheduling interface (one-time, daily, weekly, hourly, every minute), NTP time sync with IST timezone, buzzer + external LED alarm with ACK button, persistent LittleFS storage, and WiFiManager for zero-config WiFi setup.
               </p>
               <div className="mb-6">
                 <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// features</h4>
                 <ul className="space-y-2">
                   {[
-                    "Control DC motors (forward, backward, stop, brake) with PWM speed",
-                    "Servo control with smooth movement, sweeps, and angle readback",
-                    "Optional VL53L0X time-of-flight distance sensor (I²C)",
-                    "Multiple backends: pyfirmata2 or built-in pyserial Firmata client",
-                    "Clean context-manager API with singleton board access",
-                    "Comprehensive exception hierarchy (InvalidSpeedError, BoardConnectionError, etc.)",
-                    "8 ready-to-run examples for all features",
-                    "91 passing tests — all mock the Arduino, no hardware needed",
-                    "Full API documentation on GitHub Wiki",
+                    "Stepper motor dispensing with configurable steps per section",
+                    "Web UI for schedule management — no app needed",
+                    "Multiple schedule types: one-time, daily, weekly, hourly, every minute",
+                    "NTP time sync (UTC+5:30 IST) with dual NTP servers",
+                    "Alarm system: buzzer + external LED blink until ACK button pressed",
+                    "Emergency stop via web UI",
+                    "Persistent schedule storage in LittleFS (survives reboot)",
+                    "WiFiManager captive portal for easy WiFi configuration",
+                    "Responsive dark-mode web interface with real-time status",
+                    "3D-printable enclosure designs included",
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="text-primary mt-1">▹</span>
@@ -421,18 +287,30 @@ const Projects = () => {
               <div className="mb-6">
                 <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// tech stack</h4>
                 <p className="text-foreground/80 text-sm leading-relaxed">
-                  <span className="text-foreground">Language:</span> Python 3.8+<br />
-                  <span className="text-foreground">Package:</span> PyPI — <span className="text-primary font-mono">megawrapper</span><br />
-                  <span className="text-foreground">Dependencies:</span> pyfirmata2, optional: pyserial, adafruit-circuitpython-vl53l0x<br />
-                  <span className="text-foreground">Testing:</span> pytest (91 tests)<br />
-                  <span className="text-foreground">License:</span> MIT
+                  <span className="text-foreground">Language:</span> C++ (Arduino/ESP8266)<br />
+                  <span className="text-foreground">MCU:</span> ESP8266 (NodeMCU)<br />
+                  <span className="text-foreground">Motor:</span> 28BYJ-48 stepper + ULN2003 driver<br />
+                  <span className="text-foreground">Storage:</span> LittleFS (flash filesystem)<br />
+                  <span className="text-foreground">Network:</span> WiFiManager, NTP (pool.ntp.org, time.google.com)<br />
+                  <span className="text-foreground">Libraries:</span> AccelStepper, ESP8266WiFi, ESP8266WebServer, WiFiManager
+                </p>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">// hardware</h4>
+                <p className="text-foreground/80 text-sm leading-relaxed">
+                  <span className="text-foreground">MCU:</span> NodeMCU ESP8266<br />
+                  <span className="text-foreground">Stepper:</span> 28BYJ-48 5V + ULN2003 driver board<br />
+                  <span className="text-foreground">Buzzer:</span> Active buzzer on D7<br />
+                  <span className="text-foreground">External LED:</span> 5mm LED + 220-330Ω resistor on D8<br />
+                  <span className="text-foreground">ACK Button:</span> Tactile switch on D4 (GPIO0) with INPUT_PULLUP<br />
+                  <span className="text-foreground">Power:</span> 5V USB or external 5V supply
                 </p>
               </div>
               <div className="pt-6 border-t border-primary/20 mt-6">
-                <a href="https://github.com/vihaanvp/MegaWrapper" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/vihaanvp/MediBot" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors duration-300 text-sm group/link">
                   <GitHubIcon />
-                  <span className="group-hover/link:underline">github.com/vihaanvp/MegaWrapper</span>
+                  <span className="group-hover/link:underline">github.com/vihaanvp/MediBot</span>
                   <ExternalLinkIcon />
                 </a>
               </div>
@@ -440,9 +318,12 @@ const Projects = () => {
           </div>
         </div>
       </section>
+
+      
+
 
       {/* ─── LINE FOLLOWER ─── */}
-      <section ref={(el) => (sectionsRef.current[6] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[5] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>line-follower:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -508,7 +389,7 @@ const Projects = () => {
       </section>
 
       {/* ─── RoboQuest ─── */}
-      <section ref={(el) => (sectionsRef.current[7] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[6] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>roboquest:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -570,7 +451,7 @@ const Projects = () => {
       </section>
 
       {/* ─── ARDUINO / FIRMATA ECOSYSTEM ─── */}
-      <section ref={(el) => (sectionsRef.current[8] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[4] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>arduino / firmata ecosystem:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -580,6 +461,14 @@ const Projects = () => {
                 Supporting libraries and wrappers that evolved into MegaWrapper. These repos simplify Firmata-based control of motors and servos from Python.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <SubCard
+                  name="MegaWrapper"
+                  desc="A Python library that makes controlling DC motors and servos on an Arduino over Firmata as simple as writing Arduino code. Published on PyPI with optional VL53L0X time-of-flight sensor support."
+                  tags={["Python", "Arduino", "Firmata", "Robotics"]}
+                  ghUrl="https://github.com/vihaanvp/MegaWrapper"
+                  extUrl="https://pypi.org/project/megawrapper/"
+                  extLabel="View on PyPI"
+                />
                 <SubCard
                   name="PyFirmata-Simplifier"
                   desc="Combines servo-like-arduino and motor-like-arduino with support for additional components."
@@ -604,58 +493,10 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* ─── MINECRAFT ─── */}
-      <section ref={(el) => (sectionsRef.current[9] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
-        <div className="container mx-auto max-w-4xl">
-          <SectionTitle>minecraft:</SectionTitle>
-          <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <div className="relative">
-              <p className="text-foreground/80 mb-6 leading-relaxed text-sm">
-                PaperMC plugins and datapacks that add custom items, recipes, and mechanics to Minecraft servers.{" "}
-                <Link to="/papermc-plugins" className="text-primary hover:underline glow-text">
-                  Browse full plugin pages with guides & recipes →
-                </Link>
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <SubCard
-                  name="Gemstone-Plugin"
-                  desc="PaperMC plugin introducing 5 custom gemstones with unique properties."
-                  tags={["Java", "PaperMC"]}
-                  ghUrl="https://github.com/vihaanvp/Gemstone-Plugin"
-                />
-                <SubCard
-                  name="Decapitator"
-                  desc="PaperMC plugin that lets players get their own head by running /head."
-                  tags={["Java", "PaperMC"]}
-                  ghUrl="https://github.com/vihaanvp/Decapitator"
-                />
-                <SubCard
-                  name="Ender-Recipes"
-                  desc="Adds craftable Elytra and Shulker Box recipes for pre-End gameplay."
-                  tags={["Java", "PaperMC"]}
-                  ghUrl="https://github.com/vihaanvp/Ender-Recipes"
-                />
-                <SubCard
-                  name="PotionSteal"
-                  desc="LifeSteal-inspired plugin — lose potion effects instead of hearts on death."
-                  tags={["Java", "PaperMC"]}
-                  ghUrl="https://github.com/vihaanvp/PotionSteal"
-                />
-                <SubCard
-                  name="Bone-to-Bone-Block"
-                  desc="Minecraft datapack that adds a reversible Bone Block recipe using 9 bones."
-                  tags={["JSON", "Datapack"]}
-                  ghUrl="https://github.com/vihaanvp/Bone-to-Bone-Block"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ─── DISCORD BOTS ─── */}
-      <section ref={(el) => (sectionsRef.current[10] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[7] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>discord bots:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -696,7 +537,7 @@ const Projects = () => {
       </section>
 
       {/* ─── GAMES ─── */}
-      <section ref={(el) => (sectionsRef.current[11] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[8] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>games:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -739,7 +580,7 @@ const Projects = () => {
       </section>
 
       {/* ─── CONTRIBUTIONS (FORKS) ─── */}
-      <section ref={(el) => (sectionsRef.current[12] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[9] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>contributions to open-source:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">
@@ -768,7 +609,7 @@ const Projects = () => {
       </section>
 
       {/* ─── STANDALONE ─── */}
-      <section ref={(el) => (sectionsRef.current[13] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
+      <section ref={(el) => (sectionsRef.current[10] = el)} className="pt-8 pb-12 px-4 sm:px-6 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <SectionTitle>other projects:</SectionTitle>
           <div className="group relative bg-card border border-primary/30 rounded-lg p-6 md:p-8 hover:border-primary hover:bg-primary/10 transition-all duration-300 overflow-hidden mb-8">

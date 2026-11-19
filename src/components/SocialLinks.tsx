@@ -52,12 +52,6 @@ const SocialLinks = () => {
       href: "https://steamcommunity.com/id/vihaanvp/",
       external: true,
     },
-    {
-      name: "NameMC",
-      icon: "fa-solid fa-gem",
-      href: "https://namemc.com/profile/VihaanVP.2",
-      external: true,
-    },
   ];
 
   return (
